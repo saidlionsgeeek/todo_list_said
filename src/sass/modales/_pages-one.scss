@@ -1,0 +1,22 @@
+.form-pages-one{
+    input{
+        border: none;
+        outline: 0;
+        background-color:rgb(253, 253, 254);
+        color: rgb(75, 76, 93);
+    }
+    label{
+        color: rgb(86, 61, 124);
+        font-size: x-large;
+    }
+}
+.div-center{
+
+    background-color: rgb(193, 219, 252);
+    width: 30vw;
+    height: 30vw;
+    position: relative;
+    left: 50%;
+    transform: translate(-45%);
+    border-radius: 20px;
+}
