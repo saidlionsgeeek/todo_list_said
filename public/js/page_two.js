@@ -164,3 +164,4 @@ add_new_column.addEventListener("click",()=>{
     h2.textContent = prompt("Name your column");
     div.appendChild(h2);
 })
+

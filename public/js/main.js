@@ -86,7 +86,10 @@ console.log(color);
     for (let i = 0; i < modifier.length; i++) {
     modifier[i].onclick = function() {
         let div = this.parentElement.firstChild;
-        div.textContent = prompt("dd")
+        let pro =prompt("modifier la tache")
+        if (pro.length != 0) {
+            div.textContent = pro
+        }
         }
     }
 
