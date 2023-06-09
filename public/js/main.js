@@ -152,6 +152,7 @@ let li = document.querySelectorAll("li");
 
 
 
+
 // !!! first methode 
 
 
@@ -220,4 +221,13 @@ let li = document.querySelectorAll("li");
 
 
 
+
+// Il faut un input et un bouton au milieu en haut , et 3 catégories en dessous en format colonnes : todo , doing , done ;
+//     Au clique sur le bouton , la valeur de l'input s'envoie automatiquement dans la colonne todo ;
+//     Pour chaque élément envoyer , il y a 2 icones et un select 
+//         - Une qui permets de supprimer l'élement
+//         - Une qui permets de modifier l'élément 
+//         - Le select permets de switch son emplacement d'une colonne à une autre librement
+//     BONUS : Possibilité de créer une colonne ( doit être disponible dans le select )
+//     BONUS : Possibilité de choisir l'ordre dans lequel il se met dans la colonne où il se trouve .
 

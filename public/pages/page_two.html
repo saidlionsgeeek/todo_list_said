@@ -25,10 +25,36 @@
         </nav>
     </header>
 
+    <main>
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center mb-5">
+              <input type="text" id="input_todo_two" placeholder="Add your task" class="border-0 me-5  p-1 w-25 border-bottom border-5 border-black color-input ">
+              <button id="button_todo_two" class="add-button ">Add</button>
+              <button id="add_column" class="add-button-2">Add new column</button>
+            </div>
+            <div id="container" class="d-flex scrol ">
+              <div class="column" id="todoColumn">
+                <h2>To Do List</h2>
+                <ul id="todoList"></ul>
+              </div>
+              <div class="column" id="doingColumn">
+                <h2>Doing List</h2>
+                <ul id="doingList"></ul>
+              </div>
+              <div class="column" id="doneColumn">
+                <h2>Done List</h2>
+                <ul id="doneList"></ul>
+              </div>
+            </div>
+          </div>
+
+          
+    </main>
+
 
 
 
     
-    <script src="../js/main.js"></script>
+    <script src="../js/page_two.js"></script>
 </body>
 </html>
