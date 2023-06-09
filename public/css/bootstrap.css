@@ -4,7 +4,6 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11908,99 +11907,4 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-.form-pages-one input {
-  border: none;
-  outline: 0;
-  background-color: rgb(253, 253, 254);
-  color: rgb(75, 76, 93);
-}
-.form-pages-one label {
-  color: rgb(86, 61, 124);
-  font-size: x-large;
-}
-
-.div-center {
-  background-color: rgb(193, 219, 252);
-  width: 30vw;
-  height: 40vw;
-  position: relative;
-  left: 50%;
-  transform: translate(-45%);
-}
-
-.ul-hide {
-  display: none;
-  background-color: black;
-}
-
-.lolo {
-  width: 15vw;
-  font-size: 20px;
-}
-
-.li-removal {
-  padding-top: 20px;
-  border-radius: 20px;
-}
-
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  list-style-type: none;
-  font-size: 18px;
-  transition: 0.2s;
-  width: 30vw;
-}
-
-ul li.checked {
-  background: rgb(86, 61, 124);
-  color: white;
-  text-decoration: line-through;
-}
-
-.close {
-  position: absolute;
-  right: 10px;
-  top: 20px;
-}
-
-.modifier {
-  position: absolute;
-  top: 20px;
-  right: 50px;
-}
-
-.color {
-  position: absolute;
-  top: 20px;
-  right: 100px;
-}
-
-.bg-nav {
-  background-color: rgb(146, 168, 215);
-}
-
-.bg-main {
-  background-image: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.btn-color {
-  background-color: rgb(86, 61, 124);
-  width: 260px;
-  height: 80px;
-  border: none;
-  border-radius: 20px;
-}
-
-.position-page {
-  margin-top: 20vh;
-}
-
-.title {
-  font-family: "Times New Roman", Times, serif;
-  color: rgb(86, 61, 124);
 }

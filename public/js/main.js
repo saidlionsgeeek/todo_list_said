@@ -3,132 +3,124 @@ let submit_todo_one = document.querySelector("#submit_todo_one");
 let ul = document.querySelector("#ul-power")
 
 
-let position = "beforeend";
-
-
-let tabAll = [];
-
-
-// Create a "close" button and append it to each list item
-let myNodelist = document.getElementsByTagName("LI");
+let li_tag = document.getElementsByTagName("LI");
 var i;
-for (i = 0; i < myNodelist.length; i++) {
-  let span = document.createElement("i");
-  span.classList.add("close");
-  span.classList.add("fa-solid");
-  span.classList.add("fa-trash-can");
-  
-  myNodelist[i].appendChild(span);
+for (i = 0; i < li_tag.length; i++) {
+    let span = document.createElement("i");
+    span.classList.add("close");
+    span.classList.add("fa-solid");
+    span.classList.add("fa-trash-can");
+
+    li_tag[i].appendChild(span);
 }
 
-// Click on a close button to hide the current list item
-let close = document.getElementsByClassName("close");
-let modifier = document.getElementsByClassName("modifier");
 
-
-
-
-// Add a "checked" symbol when clicking on a list item
-// let list = document.querySelector('.ul-power-t');
-// list.addEventListener('click', function(ev) {
-//   if (ev.target.tagName === 'LI') {
-//     ev.target.classList.toggle('checked');
-//   }
-// }, false);
-
-
-
+let closee = document.getElementsByClassName("close");
 
 function newElement() {
-  let li = document.createElement("li");
-  let inputValue = input_todo_one.value;
-  let p = document.createElement("p");
-  li.appendChild(p)
-  let t = document.createTextNode(inputValue);
-  p.appendChild(t);
+    let li = document.createElement("li");
+    li.classList.add("remov")
+    let inputValue = input_todo_one.value;
+    let p = document.createElement("p");
+    li.appendChild(p)
+    let t = document.createTextNode(inputValue);
+    p.appendChild(t);
 
-  li.addEventListener('click', function(ev) {
-    if (ev.target.classList === 'modifier') {
-      prompt("e")
-    }
-  }, false);
-
-  let i = document.createElement("i");
-  i.classList.add("modifier");
-  i.classList.add("fa-solid");
-  i.classList.add("fa-pen-to-square");
-  li.appendChild(i)
+    let i = document.createElement("i");
+    i.classList.add("modifier");
+    i.classList.add("fa-solid");
+    i.classList.add("fa-pen-to-square");
+    li.appendChild(i)
 
 
-
-  
-  
-  if (inputValue === '') {
+    if (inputValue === '') {
     alert("You must write something!");
-  } else {
+    } else {
     document.getElementById("ul-power").appendChild(li);
-  
-  }
-  document.getElementById("input_todo_one").value = "";
-  let modifier = document.querySelectorAll(".modifier");
-  console.log(modifier);
-  
-
-
-
-  let span = document.createElement("i");
-  
-  span.classList.add("close");
-  span.classList.add("fa-solid");
-  span.classList.add("fa-trash-can");
-
-
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
     }
-  }
 
-  
-  let span2 = document.createElement("i");
-  
-  span2.classList.add("color");
-  span2.classList.add("fa-solid");
-  span2.classList.add("fa-circle-check");
+document.getElementById("input_todo_one").value = "";
+
+let span = document.createElement("i");
+
+span.classList.add("close");
+span.classList.add("fa-solid");
+span.classList.add("fa-trash-can");
 
 
-  li.appendChild(span2);
-  let color = document.querySelectorAll(".color")
-  console.log(color);
+    li.appendChild(span);
+let ul_all = document.querySelectorAll("ul");
+console.log(ul_all);
 
-  for (let i = 0; i < color.length; i++) {
+    for (i = 0; i < closee.length; i++) {
+        let element = closee[i]
+        let remov = document.getElementsByClassName("remov")[i]
+        element.addEventListener("click", () => {
+            for (let id = 0; id < ul_all.length; id++) {
+                let elemet = ul_all[id];
+                elemet.removeChild(remov);
+            }
+        })
+    }
+
+
+let span2 = document.createElement("i");
+
+span2.classList.add("color");
+span2.classList.add("fa-solid");
+span2.classList.add("fa-circle-check");
+
+
+li.appendChild(span2);
+let color = document.querySelectorAll(".color")
+console.log(color);
+
+    for (let i = 0; i < color.length; i++) {
     color[i].onclick = function() {
         let div = this.parentElement;
         div.classList.toggle("checked")
-      }
-    
-  }
-  let li_t = document.querySelectorAll("li")
-  let pp = document.querySelector("p")
-   for (let i = 0; i < modifier.length; i++) {
-    let element = modifier[i];
-    element.addEventListener("click",()=>{
-        pp[i].textContent = prompt()
-    
-      })
-   }
+        }
+    }
 
-console.log(li);
-  
-  tabAll.push(li)
-  console.log(tabAll);
+    let modifier = document.querySelectorAll(".modifier");
+
+    for (let i = 0; i < modifier.length; i++) {
+    modifier[i].onclick = function() {
+        let div = this.parentElement.firstChild;
+        div.textContent = prompt("dd")
+        }
+    }
+
+console.log(li.children);
+
 }
 
 submit_todo_one.addEventListener("click",newElement)
 
+let select_input = document.getElementById("select_input");
+
+select_input.addEventListener("change", () => {
+let selectedValue = select_input.value;
+let li = document.querySelectorAll("li");
+    for (let i = 0; i < li.length; i++) {
+        let element = li[i];
+    if (selectedValue === "All elments") {
+        element.style.display = "block";
+            } else if (selectedValue === "Valid elments") {
+                if (element.classList.contains("checked")) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            } else if (selectedValue === "No valid elments") {
+                if (!element.classList.contains("checked")) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            }
+    }
+});
 
 
 
@@ -136,6 +128,35 @@ submit_todo_one.addEventListener("click",newElement)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// !!! first methode 
+
+
+
+// let position = "beforeend";
 
 // const addElement = () => {
 //     if (input_todo_one.value.length != 0) {
