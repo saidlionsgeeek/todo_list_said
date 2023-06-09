@@ -14,7 +14,6 @@ for (i = 0; i < li_tag.length; i++) {
     li_tag[i].appendChild(span);
 }
 
-
 let closee = document.getElementsByClassName("close");
 
 function newElement() {
